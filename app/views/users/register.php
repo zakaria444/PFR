@@ -21,9 +21,14 @@
             <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
           </div>
           <div class="form-group">
-            <label for="confirm_password">Confirm Password: <sup>*</sup></label>
-            <input type="password" name="confirm_password" class="form-control form-control-lg <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['confirm_password']; ?>">
-            <span class="invalid-feedback"><?php echo $data['confirm_password_err']; ?></span>
+            <label for="ADRESS">ADRESS : <sup>*</sup></label>
+            <input type="text" name="ADRESS" class="form-control form-control-lg <?php echo (!empty($data['ADRESS_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['ADRESS']; ?>">
+            <span class="invalid-feedback"><?php  echo $data['ADRESS_err'];   ?></span>
+          </div>
+          <div class="form-group">
+            <label for="num">num : <sup>*</sup></label>
+            <input type="text" name="num" class="form-control form-control-lg <?php echo (!empty($data['num_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['num']; ?>">
+            <span class="invalid-feedback"><?php echo $data['num_err'];   ?></span>
           </div>
 
           <div class="row">

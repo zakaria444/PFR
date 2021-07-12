@@ -17,11 +17,13 @@
           'name' => trim($_POST['name']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
-          'confirm_password' => trim($_POST['confirm_password']),
+          'ADRESS' => trim($_POST['ADRESS']),
+          'num' => trim($_POST['num']),
           'name_err' => '',
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => ''
+          'ADRESS_err' => '',
+          'num_err' => ''
         ];
 
         // Validate Email
@@ -38,6 +40,10 @@
         if(empty($data['name'])){
           $data['name_err'] = 'Pleae enter name';
         }
+        // Validate num
+        if(empty($data['num'])){
+          $data['num_err'] = 'Pleae enter Num';
+        }
 
         // Validate Password
         if(empty($data['password'])){
@@ -47,16 +53,18 @@
         }
 
         // Validate Confirm Password
-        if(empty($data['confirm_password'])){
-          $data['confirm_password_err'] = 'Pleae confirm password';
+        if(empty($data['ADRESS'])){
+          $data['ADRESS_err'] = 'Pleae ADRESS';
         } else {
           if($data['password'] != $data['confirm_password']){
-            $data['confirm_password_err'] = 'Passwords do not match';
+            $data['ADRESS_err'] = 'ADRESS do not match';
           }
         }
+       
+        
 
         // Make sure errors are empty
-        if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+        if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['ADRESS_err']) && empty($data['num_err'])){
           // Validated
           
           // Hash Password
@@ -81,11 +89,13 @@
           'name' => '',
           'email' => '',
           'password' => '',
-          'confirm_password' => '',
+          'ADRESS' => '',
+          'num' =>'',
           'name_err' => '',
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => ''
+          'ADRESS_err' => '',
+          'num_err' => ''
         ];
 
         // Load view
