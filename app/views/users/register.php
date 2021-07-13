@@ -27,7 +27,7 @@
           </div>
           <div class="form-group">
             <label for="num">num : <sup>*</sup></label>
-            <input type="text" name="num" class="form-control form-control-lg <?php echo (!empty($data['num_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['num']; ?>">
+            <input type="number" name="num" class="form-control form-control-lg <?php echo (!empty($data['num_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['num']; ?>">
             <span class="invalid-feedback"><?php echo $data['num_err'];   ?></span>
           </div>
 

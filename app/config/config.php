@@ -3,7 +3,7 @@
   define('DB_HOST', 'localhost');
   define('DB_USER', 'root'); #username phpmyadmin
   define('DB_PASS', ''); # password phpmyadmin
-  define('DB_NAME', 'PFREE'); #database name
+  define('DB_NAME', 'PFRE'); #database name
 
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));

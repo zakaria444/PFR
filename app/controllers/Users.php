@@ -55,10 +55,7 @@
         // Validate Confirm Password
         if(empty($data['ADRESS'])){
           $data['ADRESS_err'] = 'Pleae ADRESS';
-        } else {
-          if($data['password'] != $data['confirm_password']){
-            $data['ADRESS_err'] = 'ADRESS do not match';
-          }
+        
         }
        
         
@@ -171,10 +168,14 @@
     }
 
     public function createUserSession($user){
-      $_SESSION['user_id'] = $user->id;
+      $_SESSION['user_id'] = $user->id_users;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
+      if($user->role_id==1){
       redirect('contacts');
+    }else{
+      redirect('contacts/add');
+    }
     }
 
     public function logout(){

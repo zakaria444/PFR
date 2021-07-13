@@ -7,18 +7,7 @@
     }
 
     public function getContacts(){
-      $this->db->query('SELECT 
-                        contacts.name as contactName,
-                        contacts.number,
-                        contacts.id as contactId,
-                        users.id as userId,
-                        contacts.created_at as contactCreated,
-                        users.created_at as userCreated
-                        FROM contacts
-                        INNER JOIN users
-                        ON contacts.user_id = users.id
-                        ORDER BY contacts.created_at DESC
-                        ');
+      $this->db->query('SELECT *from product');
 
       $results = $this->db->resultSet();
 
