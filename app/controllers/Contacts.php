@@ -26,30 +26,30 @@
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
         $data = [
-          'name' => trim($_POST['name']),
-          'email' => trim($_POST['email']),
-          'number' => trim($_POST['number']),
+          'prod_name' => trim($_POST['prod_name']),
+          'prod_details' => trim($_POST['prod_details']),
+          'prod_prix' => trim($_POST['prod_prix']),
           'address' => $_POST['address'],
           'user_id' => $_SESSION['user_id'],
-          'name_err' => '',
-          'email_err' => '',
+          'prod_name_err' => '',
+          'prod_details_err' => '',
           'address_err' => '',
-          'number_err' => ''
+          'prod_prix_err' => ''
         ];
 
         // Validate data
-        if(empty($data['name'])){
-          $data['name_err'] = 'Please enter name';
+        if(empty($data['prod_name'])){
+          $data['prod_name_err'] = 'Please enter name';
         }
-        if(empty($data['email'])){
-          $data['email_err'] = 'Please enter email text';
+        if(empty($data['prod_details'])){
+          $data['prod_details_err'] = 'Please enter details text';
         }
-        if(empty($data['number'])){
-          $data['number_err'] = 'Please enter number text';
+        if(empty($data['prod_prix'])){
+          $data['prod_prix_err'] = 'Please enter number text';
         }
 
         // Make sure no errors
-        if(empty($data['name_err']) && empty($data['email_err'])&& empty($data['number_err'])){
+        if(empty($data['prod_name_err']) && empty($data['prod_details_err'])&& empty($data['prod_prix_err'])){
           // Validated
           if($this->contactModel->addContact($data)){
             flash('contact_message', 'Contact Added');
@@ -64,9 +64,9 @@
 
       } else {
         $data = [
-          'name' => '',
-          'email' => '',
-          'number' => '',
+          'prod_name' => '',
+          'prod_details' => '',
+          'prod_prix' => '',
           'address' => '',
         ];
   
