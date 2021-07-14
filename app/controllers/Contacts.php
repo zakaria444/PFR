@@ -24,8 +24,39 @@
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $file = $_FILES['img'];
+        $fileName = $_FILES['file']['name'];
+        $fileTmpName = $_FILES['file']['tmp_name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileError = $_FILES['file']['error'];
+        $fileType = $_FILES['file']['type'];
+
+        $fileExt = explode('.' , $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+
+        $allowed = array('jpg','jpeg','png','pdf');
+
+        if(in_array( $fileActualExt,$allowed)){
+          if($fileError===0){
+            if($fileSize<1000000){
+              $fileNameNew = uniqid('',true).".". $fileActualExt;
+              $fileDestination = ''
+
+            }else{
+              echo "your file is too big"
+            }
+
+          }else{
+            echo "there was error 404"
+          }
+
+        }else{
+          echo "not fille existe"
+        }
+
 
         $data = [
+          
           'prod_name' => trim($_POST['prod_name']),
           'prod_details' => trim($_POST['prod_details']),
           'prod_prix' => trim($_POST['prod_prix']),
@@ -50,6 +81,7 @@
         if(empty($data['prod_title'])){
           $data['prod_title_err'] = 'Please enter title text';
         }
+        
 
         // Make sure no errors
         if(empty($data['prod_name_err']) && empty($data['prod_details_err'])&& empty($data['prod_prix_err'])&& empty($data['prod_title_err'])){

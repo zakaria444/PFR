@@ -3,7 +3,7 @@
   <div class="card card-body bg-light mt-5">
     <h2>Add Contact</h2>
     <p>Create a contact with this form</p>
-    <form action="<?php echo URLROOT; ?>/contacts/add" method="post">
+    <form action="<?php echo URLROOT; ?>/contacts/add" method="post"  enctype="multipart/form-data">
       <div class="form-group">
         <label for="name">Name produit: <sup>*</sup></label>
         <input type="text" name="prod_name" class="form-control form-control-lg <?php echo (!empty($data['prod_name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['prod_name']; ?>">
