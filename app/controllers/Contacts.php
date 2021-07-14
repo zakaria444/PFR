@@ -24,35 +24,10 @@
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-        $file = $_FILES['img'];
-        $fileName = $_FILES['file']['name'];
-        $fileTmpName = $_FILES['file']['tmp_name'];
-        $fileSize = $_FILES['file']['size'];
-        $fileError = $_FILES['file']['error'];
-        $fileType = $_FILES['file']['type'];
 
-        $fileExt = explode('.' , $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-
-        $allowed = array('jpg','jpeg','png','pdf');
-
-        if(in_array( $fileActualExt,$allowed)){
-          if($fileError===0){
-            if($fileSize<1000000){
-              $fileNameNew = uniqid('',true).".". $fileActualExt;
-              $fileDestination = ''
-
-            }else{
-              echo "your file is too big"
-            }
-
-          }else{
-            echo "there was error 404"
-          }
-
-        }else{
-          echo "not fille existe"
-        }
+        $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
+        // Insert record
+        
 
 
         $data = [
@@ -65,7 +40,8 @@
           'prod_name_err' => '',
           'prod_details_err' => '',
           'prod_title_err' => '',
-          'prod_prix_err' => ''
+          'prod_prix_err' => '',
+          'img' => $image_base64
         ];
 
         // Validate data

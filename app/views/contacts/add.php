@@ -1,8 +1,8 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
   <a href="<?php echo URLROOT; ?>/contacts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
   <div class="card card-body bg-light mt-5">
-    <h2>Add Contact</h2>
-    <p>Create a contact with this form</p>
+    <h2>Add Produit</h2>
+    <p>Create a Produit with this form</p>
     <form action="<?php echo URLROOT; ?>/contacts/add" method="post"  enctype="multipart/form-data">
       <div class="form-group">
         <label for="name">Name produit: <sup>*</sup></label>

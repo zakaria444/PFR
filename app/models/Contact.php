@@ -15,13 +15,14 @@
     }
 
     public function addContact($data){
-      $this->db->query('INSERT INTO contacts (name, user_id, email, number, address) VALUES(:name, :user_id, :email, :number, :address)');
+      $this->db->query('INSERT INTO product (prod_name, prod_details, prod_prix, prod_title, img) VALUES(:prod_name, :prod_details, :prod_prix, :prod_title, :img)');
       // Bind values
-      $this->db->bind(':name', $data['name']);
-      $this->db->bind(':user_id', $data['user_id']);
-      $this->db->bind(':email', $data['email']);
-      $this->db->bind(':number', $data['number']);
-      $this->db->bind(':address', $data['address']);
+      $this->db->bind(':prod_name', $data['prod_name']);
+      $this->db->bind(':prod_details', $data['prod_details']);
+      $this->db->bind(':prod_prix', $data['prod_prix']);
+      $this->db->bind(':prod_title', $data['prod_title']);
+      $this->db->bind(':img', $data['img']);
+      
 
       // Execute
       if($this->db->execute()){
