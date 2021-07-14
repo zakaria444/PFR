@@ -10,20 +10,22 @@
         <span class="invalid-feedback"><?php echo $data['prod_name_err']; ?></span>
       </div>
       <div class="form-group">
-        <label for="number">Number: <sup>*</sup></label>
+        <label for="number">Prix: <sup>*</sup></label>
         <input type="Number" name="prod_prix" class="form-control form-control-lg <?php echo (!empty($data['prod_prix_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['prod_prix']; ?>">
         <span class="invalid-feedback"><?php echo $data['prod_prix_err']; ?></span>
       </div>
       <div class="form-group">
-        <label for="email">details: <sup>*</sup></label>
+        <label for="details">details: <sup>*</sup></label>
         <textarea name="prod_details" class="form-control form-control-lg <?php echo (!empty($data['prod_details_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['prod_details']; ?></textarea>
         <span class="invalid-feedback"><?php echo $data['prod_details_err']; ?></span>
       </div>
       <div class="form-group">
-        <label for="address">Address: <sup>*</sup></label>
-        <input type="text" name="address" class="form-control form-control-lg <?php echo (!empty($data['address_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['address']; ?>">
-        <span class="invalid-feedback"><?php echo $data['address_err']; ?></span>
+        <label for="address">title: <sup>*</sup></label>
+        <input type="text" name="prod_title" class="form-control form-control-lg <?php echo (!empty($data['prod_title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['prod_title']; ?>">
+        <span class="invalid-feedback"><?php echo $data['prod_title_err']; ?></span>
       </div>
+      <label for="img">Select image:</label>
+  <input type="file" id="img" name="img" accept="image/*">
       <input type="submit" class="btn btn-success" value="Submit">
     </form>
   </div>

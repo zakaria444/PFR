@@ -29,11 +29,11 @@
           'prod_name' => trim($_POST['prod_name']),
           'prod_details' => trim($_POST['prod_details']),
           'prod_prix' => trim($_POST['prod_prix']),
-          'address' => $_POST['address'],
+          'prod_title' => $_POST['prod_title'],
           'user_id' => $_SESSION['user_id'],
           'prod_name_err' => '',
           'prod_details_err' => '',
-          'address_err' => '',
+          'prod_title_err' => '',
           'prod_prix_err' => ''
         ];
 
@@ -47,9 +47,12 @@
         if(empty($data['prod_prix'])){
           $data['prod_prix_err'] = 'Please enter number text';
         }
+        if(empty($data['prod_title'])){
+          $data['prod_title_err'] = 'Please enter title text';
+        }
 
         // Make sure no errors
-        if(empty($data['prod_name_err']) && empty($data['prod_details_err'])&& empty($data['prod_prix_err'])){
+        if(empty($data['prod_name_err']) && empty($data['prod_details_err'])&& empty($data['prod_prix_err'])&& empty($data['prod_title_err'])){
           // Validated
           if($this->contactModel->addContact($data)){
             flash('contact_message', 'Contact Added');
@@ -67,7 +70,7 @@
           'prod_name' => '',
           'prod_details' => '',
           'prod_prix' => '',
-          'address' => '',
+          'prod_title' => '',
         ];
   
         $this->view('contacts/add', $data);
