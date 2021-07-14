@@ -10,11 +10,11 @@
       </a>
     </div>
   </div>
-  <?php foreach($data['contacts'] as $contact) : ?>
+  <?php foreach($data['product'] as $contact) : ?>
     <div class="card card-body mb-3">
-      <h4 class="card-title"><?php echo $contact->contactName; ?></h4>
+      <h4 class="card-title"><?php echo $contact->prod_name; ?></h4>
       <div class="bg-light p-2 mb-3">
-        <?php echo $contact->number; ?>
+        <?php echo $contact->img; ?>
       </div>
       <a href="<?php echo URLROOT; ?>/contacts/show/<?php echo $contact->contactId; ?>" class="btn btn-dark">More</a>
     </div>

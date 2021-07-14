@@ -14,7 +14,7 @@
       $contacts = $this->contactModel->getContacts();
 
       $data = [
-        'contacts' => $contacts
+        'product' => $contacts
       ];
 
       $this->view('contacts/index', $data);
@@ -158,7 +158,7 @@
       $user = $this->userModel->getUserById($contact->user_id);
 
       $data = [
-        'contact' => $contact,
+        'product' => $contact,
         'user' => $user
       ];
 
