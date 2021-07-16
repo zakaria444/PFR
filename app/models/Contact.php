@@ -50,7 +50,7 @@
     }
 
     public function getContactById($id){
-      $this->db->query('SELECT * FROM contacts WHERE id = :id');
+      $this->db->query('SELECT * FROM product WHERE id_product = :id');
       $this->db->bind(':id', $id);
 
       $row = $this->db->single();

@@ -10,8 +10,8 @@
       }
 
       $data = [
-        'title' => 'My Contacts management',
-        'description' => 'This is the first page of my contacts management application'
+        'title' => 'My Product management',
+        'description' => 'This is the first page of my product management application'
       ];
      
       $this->view('pages/index', $data);
@@ -20,7 +20,7 @@
     public function about(){
       $data = [
         'title' => 'About Us',
-        'description' => 'App to manage contacts.'
+        'description' => 'App to manage Product.'
       ];
 
       $this->view('pages/about', $data);

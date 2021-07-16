@@ -63,7 +63,7 @@
         if(empty($data['prod_name_err']) && empty($data['prod_details_err'])&& empty($data['prod_prix_err'])&& empty($data['prod_title_err'])){
           // Validated
           if($this->contactModel->addContact($data)){
-            flash('contact_message', 'Contact Added');
+            flash('contact_message', 'Product Added');
             redirect('contacts');
           } else {
             die('Something went wrong');
@@ -155,7 +155,7 @@
 
     public function show($id){
       $contact = $this->contactModel->getContactById($id);
-      $user = $this->userModel->getUserById($contact->user_id);
+      $user = $this->userModel->getUserById($contact->id_product);
 
       $data = [
         'product' => $contact,
