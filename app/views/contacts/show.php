@@ -2,14 +2,14 @@
 <a href="<?php echo URLROOT; ?>/contacts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
 <br>
 <h4><?php echo $data['product']->prod_name; ?></h4>
-<h4><?php echo $data['product']->email; ?></h4>
-<h4><?php echo $data['product']->address; ?></h4>
-<h4><?php echo $data['product']->number; ?></h4>
+<h4><?php echo $data['product']->prod_prix; ?></h4>
+<h4><?php echo $data['product']->prod_details; ?></h4>
+<h4><?php echo $data['product']->prod_title; ?></h4>
 
 
 
 
-<?php if($data['product']->user_id == $_SESSION['user_id']) : ?>
+<?php if($data['product']->id_product == $_SESSION['id_product']) : ?>
   <hr>
   <a href="<?php echo URLROOT; ?>/contacts/edit/<?php echo $data['product']->id; ?>" class="btn btn-dark">Edit</a>
 

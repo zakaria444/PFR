@@ -7,7 +7,7 @@
     }
 
     public function getContacts(){
-      $this->db->query('SELECT *from product');
+      $this->db->query('SELECT * from product');
 
       $results = $this->db->resultSet();
 
@@ -50,8 +50,8 @@
     }
 
     public function getContactById($id){
-      $this->db->query('SELECT * FROM product WHERE id_product = :id');
-      $this->db->bind(':id', $id);
+      $this->db->query('SELECT * FROM product WHERE id_product = :id_product');
+      $this->db->bind(':id_product', $id);
 
       $row = $this->db->single();
 
@@ -59,7 +59,7 @@
     }
 
     public function deleteContact($id){
-      $this->db->query('DELETE FROM contacts WHERE id = :id');
+      $this->db->query('DELETE FROM contacts WHERE id_product = :id');
       // Bind values
       $this->db->bind(':id', $id);
 

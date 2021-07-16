@@ -155,11 +155,11 @@
 
     public function show($id){
       $contact = $this->contactModel->getContactById($id);
-      $user = $this->userModel->getUserById($contact->id_product);
+      // $user = $this->userModel->getUserById($contact->id_product);
 
       $data = [
         'product' => $contact,
-        'user' => $user
+        // 'user' => $user
       ];
 
       $this->view('contacts/show', $data);
