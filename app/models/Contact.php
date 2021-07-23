@@ -33,13 +33,13 @@
     }
 
     public function updateContact($data){
-      $this->db->query('UPDATE contacts SET name = :name, email = :email, number = :number, address = :address WHERE id = :id');
+      $this->db->query('UPDATE product SET prod_name = :prod_name, prod_details = :prod_details, prod_prix = :prod_prix, prod_title = :prod_title WHERE id_product = :id');
       // Bind values
-      $this->db->bind(':id', $data['id']);
-      $this->db->bind(':name', $data['name']);
-      $this->db->bind(':email', $data['email']);
-      $this->db->bind(':number', $data['number']);
-      $this->db->bind(':address', $data['address']);
+      $this->db->bind(':id', $data['id_product']);
+      $this->db->bind(':prod_name', $data['prod_name']);
+      $this->db->bind(':prod_details', $data['prod_details']);
+      $this->db->bind(':prod_prix', $data['prod_prix']);
+      $this->db->bind(':prod_title', $data['prod_title']);
 
       // Execute
       if($this->db->execute()){
@@ -59,7 +59,7 @@
     }
 
     public function deleteContact($id){
-      $this->db->query('DELETE FROM contacts WHERE id_product = :id');
+      $this->db->query('DELETE FROM product WHERE id_product = :id');
       // Bind values
       $this->db->bind(':id', $id);
 
