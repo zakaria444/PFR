@@ -91,38 +91,38 @@
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
         $data = [
-          'id' => $id,
-          'name' => trim($_POST['name']),
-          'email' => trim($_POST['email']),
-          'address' => $_POST['address'],
-          'number' => trim($_POST['number']),
+          'id_product' => $id,
+          'prod_name' => trim($_POST['prod_name']),
+          'prod_details' => trim($_POST['prod_details']),
+          'prod_prix' => $_POST['prod_prix'],
+          'prod_title' => trim($_POST['prod_title']),
           'user_id' => $_SESSION['user_id'],
-          'name_err' => '',
-          'email_err' => '',
-          'number_err' => '',
-          'address_err' => ''
+          'prod_name_err' => '',
+          'prod_details_err' => '',
+          'prod_prix_err' => '',
+          'prod_title_err' => ''
         ];
 
         // Validate data
-        if(empty($data['name'])){
-          $data['name_err'] = 'Please enter name';
+        if(empty($data['prod_name'])){
+          $data['prod_name_err'] = 'Please enter Prod Name';
         }
-        if(empty($data['email'])){
-          $data['email_err'] = 'Please enter email text';
+        if(empty($data['prod_details'])){
+          $data['prod_details_err'] = 'Please enter Prod Details';
 
         }
-        if(empty($data['address'])){
-          $data['address_err'] = 'Please enter address text';
+        if(empty($data['prod_prix'])){
+          $data['prod_prix_err'] = 'Please enter  Prod Prix';
         }
-        if(empty($data['number'])){
-          $data['number_err'] = 'Please enter number text';
+        if(empty($data['prod_title'])){
+          $data['prod_title_err'] = 'Please enter Prod Title';
         }
 
         // Make sure no errors
-        if(empty($data['name_err']) && empty($data['email_err']) && empty($data['number_err'])&& empty($data['address_err'])){
+        if(empty($data['prod_name_err']) && empty($data['prod_details_err']) && empty($data['prod_prix_err'])&& empty($data['prod_title_err'])){
           // Validated
           if($this->contactModel->updateContact($data)){
-            flash('contact_message', 'Contact Updated');
+            flash('contact_message', 'Product Updated');
             redirect('contacts');
           } else {
             die('Something went wrong');
@@ -137,16 +137,16 @@
         $contact = $this->contactModel->getContactById($id);
 
         // Check for owner
-        if($contact->user_id != $_SESSION['user_id']){
-          redirect('contacts');
-        }
+        // if($contact->user_id != $_SESSION['user_id']){
+        //   redirect('contacts');
+        // }
 
         $data = [
           'id' => $id,
-          'name' => $contact->name,
-          'email' => $contact->email,
-          'number' => $contact->number,
-          'address' => $contact->address
+          'prod_name' => $contact->prod_name,
+          'prod_details' => $contact->prod_details,
+          'prod_prix' => $contact->prod_prix,
+          'prod_title' => $contact->prod_title
         ];
   
         $this->view('contacts/edit', $data);
@@ -155,11 +155,11 @@
 
     public function show($id){
       $contact = $this->contactModel->getContactById($id);
-      // $user = $this->userModel->getUserById($contact->id_product);
+      $user = $this->userModel->getUserById($contact->id_product);
 
       $data = [
         'product' => $contact,
-        // 'user' => $user
+        'user' => $user
       ];
 
       $this->view('contacts/show', $data);
@@ -168,15 +168,13 @@
     public function delete($id){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Get existing post from model
-        $contact = $this->contactModel->getContactById($id);
+       
         
         // Check for owner
-        if($contact->user_id != $_SESSION['user_id']){
-          redirect('contacts');
-        }
+        
 
         if($this->contactModel->deleteContact($id)){
-          flash('contact_message', 'Contact Removed');
+          flash('contact_message', 'Product Removed');
           redirect('contacts');
         } else {
           die('Something went wrong');
