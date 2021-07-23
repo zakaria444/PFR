@@ -5,17 +5,18 @@
 <h4><?php echo $data['product']->prod_prix; ?></h4>
 <h4><?php echo $data['product']->prod_details; ?></h4>
 <h4><?php echo $data['product']->prod_title; ?></h4>
+<img src="data:image/png;base64,<?php echo $data['product']->img; ?>">
 
 
 
 
-<?php if($data['product']->id_product == $_SESSION['id_product']) : ?>
+
   <hr>
-  <a href="<?php echo URLROOT; ?>/contacts/edit/<?php echo $data['product']->id; ?>" class="btn btn-dark">Edit</a>
+  <a href="<?php echo URLROOT; ?>/contacts/edit/<?php echo $data['product']->id_product; ?>" class="btn btn-dark">Edit</a>
 
-  <form class="pull-right" action="<?php echo URLROOT; ?>/contacts/delete/<?php echo $data['product']->id; ?>" method="post">
+  <form class="pull-right" action="<?php echo URLROOT; ?>/contacts/delete/<?php echo $data['product']->id_product; ?>" method="post">
     <input type="submit" value="Delete" class="btn btn-danger">
   </form>
-<?php endif; ?>
+
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

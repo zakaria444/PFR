@@ -20,7 +20,7 @@
         <span class="invalid-feedback"><?php echo $data['prod_details_err']; ?></span>
       </div>
       <div class="form-group">
-        <label for="address">title: <sup>*</sup></label>
+        <label for="title">title: <sup>*</sup></label>
         <input type="text" name="prod_title" class="form-control form-control-lg <?php echo (!empty($data['prod_title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['prod_title']; ?>">
         <span class="invalid-feedback"><?php echo $data['prod_title_err']; ?></span>
       </div>
