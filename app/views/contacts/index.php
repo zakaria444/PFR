@@ -14,13 +14,13 @@
 
 <div class="row">
 <?php foreach ($data['product'] as $contact) : ?>
-  <div class=" w-40 col-6 " >
-    <div class="card card-body mb-3 ">
+  <div class=" w-40 col-4 " >
+    <div class="card card-body mb-3">
+      <div class="cont" style="display:flex; ">
+    <img src="data:image/png;base64,<?php echo $contact->img; ?> "  style="width:30%; ">
       <h4 class="card-title"><?php echo $contact->prod_name; ?></h4>
+      </div>
       <div class="bg-light p-2 mb-3">
-
-
-        <img src="data:image/png;base64,<?php echo $contact->img; ?> "  style="width:20%; ">
       </div>
       <a href="<?php echo URLROOT; ?>/contacts/show/<?php echo $contact->id_product; ?>" class="btn btn-dark">More</a>
     </div>
