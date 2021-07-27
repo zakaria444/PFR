@@ -18,7 +18,11 @@
     <div class="card card-body mb-3">
       <div class="cont" style="display:flex; ">
     <img src="data:image/png;base64,<?php echo $contact->img; ?> "  style="width:30%; ">
-      <h4 class="card-title"><?php echo $contact->prod_name; ?></h4>
+    <div class="title" style="margin-left: 30px;">
+      <h4 class="card-title"   ><?php echo $contact->prod_name; ?></h4>
+      <h4><?php echo $contact->prod_prix; ?>DH</h4>
+      </div>
+
       </div>
       <div class="bg-light p-2 mb-3">
       </div>
