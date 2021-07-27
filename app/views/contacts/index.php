@@ -20,7 +20,7 @@
     <img src="data:image/png;base64,<?php echo $contact->img; ?> "  style="width:30%; ">
     <div class="title" style="margin-left: 30px;">
       <h4 class="card-title"   ><?php echo $contact->prod_name; ?></h4>
-      <h4><?php echo $contact->prod_prix; ?>DH</h4>
+      <h4 style="border:0.5px solid; width: 50%;background-color: #FFF5EB;text-align: center;"><?php echo $contact->prod_prix; ?>DH</h4>
       </div>
 
       </div>
