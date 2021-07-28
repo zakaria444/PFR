@@ -19,6 +19,20 @@
 
       $this->view('contacts/index', $data);
     }
+    public function store(){
+      
+        // Get posts
+        $contacts = $this->contactModel->getContacts();
+  
+        $data = [
+          'product' => $contacts
+        ];
+  
+        $this->view('product/store', $data);
+      }
+
+    
+
 
     public function add(){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -164,6 +178,19 @@
 
       $this->view('contacts/show', $data);
     }
+    public function showproduct($id){
+      $contact = $this->contactModel->getContactById($id);
+      $user = $this->userModel->getUserById($contact->id_product);
+
+      $data = [
+        'product' => $contact,
+        'user' => $user
+      ];
+
+      $this->view('product/showproduct', $data);
+
+    }
+
 
     public function delete($id){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){

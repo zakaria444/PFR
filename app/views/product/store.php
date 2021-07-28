@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/headeruser.php'; ?>
 
 <?php flash('contact_message'); ?>
 <div class="row mb-3">
@@ -6,9 +6,7 @@
     <h1>Prodact</h1>
   </div>
   <div class="col-md-6">
-    <a href="<?php echo URLROOT; ?>/contacts/add" class="btn btn-primary pull-right">
-      <i class="fa fa-pencil " ></i> Add Produit
-    </a>
+   
   </div>
 </div>
 
@@ -26,7 +24,7 @@
       </div>
       <div class="bg-light p-2 mb-3">
       </div>
-      <a href="<?php echo URLROOT; ?>/contacts/show/<?php echo $contact->id_product; ?>" class="btn btn-dark">More</a>
+      <a href="<?php echo URLROOT; ?>/contacts/showproduct/<?php echo $contact->id_product; ?>" class="btn btn-dark">More</a>
     </div>
   </div>
 <?php endforeach; ?>

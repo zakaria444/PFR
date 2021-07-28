@@ -27,4 +27,3 @@
       <input type="submit" class="btn btn-success" value="Submit">
     </form>
   </div>
-<?php require APPROOT . '/views/inc/footer.php'; ?>

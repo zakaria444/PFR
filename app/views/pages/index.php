@@ -15,13 +15,13 @@
       <div class="cont" style="display:flex; ">
     <div class="title" style="    background-color:#DDDDDD;">
       <h4 class="card-title" style="margin-left: 55px;"  > Very First Sight</h4>
-      <img src="<?php echo URLROOT; ?>/img/1002.jpg" style="width: 60%; margin-left: 55px;" >
+      <img src="<?php echo URLROOT; ?>/img/1001.jpg" style="width: 60%; margin-left: 55px;" >
       <h4 style="border:0.5px solid; width: 60%;background-color: #FFF5EB;text-align: center; margin-left: 55px;margin-top: 30px;">49 DH</h4>
       </div>
       </div>
       <div class="bg-light p-2 mb-3">
       </div>
-      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">More</a>
+      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">GO store</a>
     </div>
     
   </div>
@@ -36,7 +36,7 @@
       </div>
       <div class="bg-light p-2 mb-3">
       </div>
-      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">More</a>
+      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">GO store</a>
     </div>
     </div>
     <div class=" w-40 col-4 " >
@@ -51,7 +51,8 @@
       </div>
       <div class="bg-light p-2 mb-3">
       </div>
-      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">More</a>
+      <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">GO store</a>
     </div>
 </div>
+
 <?php require APPROOT . '/views/inc/footer.php'; ?>

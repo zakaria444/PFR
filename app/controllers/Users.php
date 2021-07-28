@@ -172,9 +172,9 @@
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
       if($user->role_id==1){
-      redirect('contacts');
+      redirect('contacts/store');
     }else{
-      redirect('contacts/add');
+      redirect('contacts');
     }
     }
 
