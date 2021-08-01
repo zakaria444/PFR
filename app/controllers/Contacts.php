@@ -214,14 +214,33 @@
   public function addtocart(){
     session_start();
     $prodducy_ids=array();
+    session_destroy();
+    //chek if add to cart button has been submit 
     if(filter_input(INPUT_POST, 'add-to-cart')){
       if(isset($_SESSION['shopping_cart'])){
+        //keep track how mnay product are in the shopping cart 
+        $count =count($_SESSION['shopping_cart']);
+        //create sequantial array for matching array keys to products id's
+        $prod_ids =array_column($_SESSION['shopping_cart'],'id_product');
+
+
+
 
       }else
-      {
+      {//if shopping cart dosen't exite crate first product with array key 0
+        $_SESSION['shopping_cart'][0]=array
+        (
+          'id'=>filter_input(INPUT_GET,'id_product'),
+          'name'=>filter_input(INPUT_POST,'prod_name'),
+          'prix'=>filter_input(INPUT_POST,'prod_prix'),
+
+
+
+
+        );
 
       }
     }
-
+print_r($_SESSION);
   }
 }
