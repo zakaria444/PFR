@@ -10,6 +10,6 @@
   // URL Root
   define('URLROOT', 'http://localhost/PFR');
   // Site Name
-  define('SITENAME', 'MKTABABOKS');
+  define('SITENAME', 'MBM');
   // App Version
   define('APPVERSION', '1.0.0');

@@ -210,4 +210,18 @@
         redirect('contacts');
       }
     }
+  
+  public function addtocart(){
+    session_start();
+    $prodducy_ids=array();
+    if(filter_input(INPUT_POST, 'add-to-cart')){
+      if(isset($_SESSION['shopping_cart'])){
+
+      }else
+      {
+
+      }
+    }
+
   }
+}
