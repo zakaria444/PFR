@@ -211,7 +211,7 @@
       }
     }
   
-  public function addtocart(){
+  public function addtocart($product){
     session_start();
     $prodducy_ids=array();
     session_destroy();
@@ -222,17 +222,42 @@
         $count =count($_SESSION['shopping_cart']);
         //create sequantial array for matching array keys to products id's
         $prod_ids =array_column($_SESSION['shopping_cart'],'id_product');
+        if(!in_array($product , $prod_ids )){
+          $_SESSION['shopping_cart'][$count]=array
+        (
+          'id'=>($product),
+          'name'=>filter_input(INPUT_POST,'prod_name'),
+          'prix'=>filter_input(INPUT_POST,'prod_prix'),
+          'quantity'=>filter_input(INPUT_POST,'quantity')
+
+
+
+        );
+
+        }
+        else{
+          for ($i = 0 ; $i < count($prod_ids);$i++){
+            if($prod_ids[$i] == $product ){
+              $_SESSION['shopping_cart'][$i]+= filter_input(INPUT_POST,'quantity');
+            }
+
+          }
+        }
 
 
 
 
       }else
       {//if shopping cart dosen't exite crate first product with array key 0
+        
         $_SESSION['shopping_cart'][0]=array
+        
         (
-          'id'=>filter_input(INPUT_GET,'id_product'),
+          'id'=>($product),
           'name'=>filter_input(INPUT_POST,'prod_name'),
           'prix'=>filter_input(INPUT_POST,'prod_prix'),
+          'quantity'=>filter_input(INPUT_POST,'quantity'),
+
 
 
 
@@ -242,5 +267,6 @@
       }
     }
 print_r($_SESSION);
+
   }
 }

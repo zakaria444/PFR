@@ -25,8 +25,11 @@
     <input type="submit" value="Delete" class="btn btn-danger">
   </form>
   <form class="pull-right" action="<?php echo URLROOT; ?>/contacts/addtocart/<?php echo $data['product']->id_product; ?>" method="post">
+  <input type="text" name="quantity" value="1"/>
   <input type="hidden" name="prod_name" value="<?php echo $data['product']->prod_name; ?>">
   <input type="hidden" name="prod_prix" value="<?php echo $data['product']->prod_prix; ?>">
+ 
+
 
     <input type="submit" name="add-to-cart"  value="add to cart" class="btn btn-danger">
   </form>
