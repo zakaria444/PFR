@@ -211,62 +211,61 @@
       }
     }
   
-  public function addtocart($product){
-    session_start();
-    $prodducy_ids=array();
-    session_destroy();
-    //chek if add to cart button has been submit 
-    if(filter_input(INPUT_POST, 'add-to-cart')){
-      if(isset($_SESSION['shopping_cart'])){
-        //keep track how mnay product are in the shopping cart 
-        $count =count($_SESSION['shopping_cart']);
-        //create sequantial array for matching array keys to products id's
-        $prod_ids =array_column($_SESSION['shopping_cart'],'id_product');
-        if(!in_array($product , $prod_ids )){
-          $_SESSION['shopping_cart'][$count]=array
-        (
-          'id'=>($product),
-          'name'=>filter_input(INPUT_POST,'prod_name'),
-          'prix'=>filter_input(INPUT_POST,'prod_prix'),
-          'quantity'=>filter_input(INPUT_POST,'quantity')
+//   public function addtocart($product){
+//     session_start();
+//     $prodducy_ids=array();
+//     session_destroy();
+//     //chek if add to cart button has been submit 
+//     if(filter_input(INPUT_POST, 'add-to-cart')){
+//       if(isset($_SESSION['shopping_cart'])){
+//         //keep track how mnay product are in the shopping cart 
+//         $count =count($_SESSION['shopping_cart']);
+//         //create sequantial array for matching array keys to products id's
+//         $prod_ids =array_column($_SESSION['shopping_cart'],'id_product');
+//         if(!in_array($product , $prod_ids )){
+//           $_SESSION['shopping_cart'][$count]=array
+//         (
+//           'id'=>($product),
+//           'name'=>filter_input(INPUT_POST,'prod_name'),
+//           'prix'=>filter_input(INPUT_POST,'prod_prix'),
+//           'quantity'=>filter_input(INPUT_POST,'quantity')
 
 
 
-        );
+//         );
 
-        }
-        else{
-          for ($i = 0 ; $i < count($prod_ids);$i++){
-            if($prod_ids[$i] == $product ){
-              $_SESSION['shopping_cart'][$i]+= filter_input(INPUT_POST,'quantity');
-            }
+//         }
+//         else{
+//           for ($i = 0 ; $i < count($prod_ids);$i++){
+//             if($prod_ids[$i] == $product ){
+//               $_SESSION['shopping_cart'][$i]+= filter_input(INPUT_POST,'quantity');
+//             }
 
-          }
-        }
-
-
+//           }
+//         }
 
 
-      }else
-      {//if shopping cart dosen't exite crate first product with array key 0
+
+
+//       }else
+//       {//if shopping cart dosen't exite crate first product with array key 0
         
-        $_SESSION['shopping_cart'][0]=array
+//         $_SESSION['shopping_cart'][0]=array
         
-        (
-          'id'=>($product),
-          'name'=>filter_input(INPUT_POST,'prod_name'),
-          'prix'=>filter_input(INPUT_POST,'prod_prix'),
-          'quantity'=>filter_input(INPUT_POST,'quantity'),
+//         (
+//           'id'=>($product),
+//           'name'=>filter_input(INPUT_POST,'prod_name'),
+//           'prix'=>filter_input(INPUT_POST,'prod_prix'),
+//           'quantity'=>filter_input(INPUT_POST,'quantity'),
 
 
 
 
 
-        );
+//         );
 
-      }
-    }
-print_r($_SESSION);
-
-  }
-}
+//       }
+//     }
+// // print_r($_SESSION);
+// $this->view('product/store', $_SESSION); 
+ }

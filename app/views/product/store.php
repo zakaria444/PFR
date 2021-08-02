@@ -1,5 +1,6 @@
 <?php require APPROOT . '/views/inc/headeruser.php'; ?>
 
+?>
 <?php flash('contact_message'); ?>
 <div class="row mb-3">
   <div class="col-md-6">
