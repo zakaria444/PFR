@@ -67,6 +67,12 @@
     <td><?php echo $product['quantity']?></td>
     <td><?php echo $product['prix']?></td>
     <td><?php echo number_format($product['quantity'] * $product['prix'], 2)?></td>
+    <td>
+      <a href="<?php echo URLROOT; ?>/contacts/remove/<?php echo $product->id; ?>">remve</a>
+    </td>
+    <td>
+      <a href="<?php echo URLROOT; ?>/contacts/editorder/<?php echo $product->id; ?>">edit</a>
+    </td>
 
 
 
