@@ -34,3 +34,4 @@
 
     <input type="submit" name="add-to-cart"  value="add to cart" class="btn btn-danger">
   </form>
+  

@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/headeruser.php'; ?>
 
-?>
+
 <?php flash('contact_message'); ?>
 <div class="row mb-3">
   <div class="col-md-6">
@@ -13,7 +13,7 @@
 
  
 
-<div class="row">
+<div class="row ">
 <?php foreach ($data['product'] as $contact) : ?>
   <div class=" w-40 col-4 " >
     <div class="card card-body mb-3">
@@ -33,4 +33,45 @@
   </div>
   
 <?php endforeach; ?>
+</div></div>
+
+
+
+
+
+<div style="clear: both;"></div>
+<br/>
+<div class="table-responsive">
+
+<table class="table">
+  <tr><th colspan="5"><h3>Order details</h3></th></tr>
+  <tr>
+    <th width="40%">Product name</th>
+    <th width="10%">Quantity</th>
+    <th width="20%">Price</th>
+    <th width="15%">Total</th>
+    <th width="5%">Action</th>
+
+  </tr>
+  
+  <?php
+ 
+    $total = 0;
+    foreach($_SESSION['shopping_cart']as $key=>$product):
+
+      
+  ?>
+ 
+  <tr>
+    <td><?php echo $product['name']?></td>
+    <td><?php echo $product['quantity']?></td>
+    <td><?php echo $product['prix']?></td>
+    <td><?php echo number_format($product['quantity'] * $product['prix'], 2)?></td>
+
+
+
+
+  </tr>
+  <?php endforeach; ?>
 </div>
+ 

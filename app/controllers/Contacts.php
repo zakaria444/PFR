@@ -267,6 +267,8 @@
 
       }
     }
-echo "<pre>" . var_dump($_SESSION)."</pre>";
+echo "<pre>" ;
+ var_dump($_SESSION);
+ echo "</pre>";
 // $this->view('product/store', $_SESSION); 
  }}
