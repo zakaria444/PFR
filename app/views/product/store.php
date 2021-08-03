@@ -11,6 +11,8 @@
   </div>
 </div>
 
+ 
+
 <div class="row">
 <?php foreach ($data['product'] as $contact) : ?>
   <div class=" w-40 col-4 " >
@@ -21,12 +23,14 @@
       <h4 class="card-title"   ><?php echo $contact->prod_name; ?></h4>
       <h4 style="border:0.5px solid; width: 50%;background-color: #FFF5EB;text-align: center;"><?php echo $contact->prod_prix; ?>DH</h4>
       </div>
-
       </div>
       <div class="bg-light p-2 mb-3">
+        
       </div>
       <a href="<?php echo URLROOT; ?>/contacts/showproduct/<?php echo $contact->id_product; ?>" class="btn btn-dark">More</a>
     </div>
+    
   </div>
+  
 <?php endforeach; ?>
 </div>
