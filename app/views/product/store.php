@@ -41,6 +41,7 @@
 
 <div style="clear: both;"></div>
 <br/>
+<?php if(!empty($_SESSION['shopping_cart'])){  ?>
 <div class="table-responsive">
 
 <table class="table">
@@ -55,9 +56,14 @@
   </tr>
   
   <?php
- 
+
+
+
+    
     $total = 0;
     foreach($_SESSION['shopping_cart']as $key=>$product):
+
+   
 
       
   ?>
@@ -68,16 +74,17 @@
     <td><?php echo $product['prix']?></td>
     <td><?php echo number_format($product['quantity'] * $product['prix'], 2)?></td>
     <td>
-      <a href="<?php echo URLROOT; ?>/contacts/remove/<?php echo $product->id; ?>">remve</a>
+      <a href="<?php echo URLROOT; ?>/contacts/remove/<?php echo $product['id']; ?>">remve</a>
     </td>
     <td>
-      <a href="<?php echo URLROOT; ?>/contacts/editorder/<?php echo $product->id; ?>">edit</a>
     </td>
 
 
 
 
   </tr>
-  <?php endforeach; ?>
+
+<?php endforeach ?>
+</table>
 </div>
- 
+ <?php   } ?>

@@ -178,6 +178,7 @@
 
       $this->view('contacts/show', $data);
     }
+    
     public function showproduct($id){
       $contact = $this->contactModel->getContactById($id);
       $user = $this->userModel->getUserById($contact->id_product);
@@ -209,6 +210,24 @@
       } else {
         redirect('contacts');
       }
+    }
+    public function remove($id){
+    //   $array = $_SESSION['shopping_cart'];
+
+    //  $key = array_search($id, array_column($array , 'id'));
+    // var_dump($key);
+    //   unset($_SESSION['shopping_cart'][$key]);
+    //   redirect('contacts/store');
+
+    if(!empty($_SESSION["shopping_cart"])) {
+      foreach($_SESSION["shopping_cart"] as $k => $v) {
+      if($id == $v['id']){
+      unset($_SESSION["shopping_cart"][$k]);
+      redirect('contacts/store');
+    }
+  }
+}
+
     }
   
   public function addtocart($product){
@@ -267,6 +286,7 @@
 
       }
     }
+    redirect('contacts/store');
 echo "<pre>" ;
  var_dump($_SESSION);
  echo "</pre>";
