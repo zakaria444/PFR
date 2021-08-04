@@ -220,9 +220,10 @@
     //   redirect('contacts/store');
 
     if(!empty($_SESSION["shopping_cart"])) {
-      foreach($_SESSION["shopping_cart"] as $k => $v) {
-      if($id == $v['id']){
-      unset($_SESSION["shopping_cart"][$k]);
+      foreach($_SESSION["shopping_cart"] as $key => $product) {
+      if($id == $product['id']){
+        //remove product from the shopping cart when it matches with the GET  id
+      unset($_SESSION["shopping_cart"][$key]);
       flash('contact_message', 'Remove product cart');
       redirect('contacts/store');
     }
