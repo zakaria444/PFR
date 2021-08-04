@@ -71,10 +71,10 @@
   <tr>
     <td><?php echo $product['name']?></td>
     <td><?php echo $product['quantity']?></td>
-    <td><?php echo $product['prix']?></td>
-    <td><?php echo number_format($product['quantity'] * $product['prix'], 2)?></td>
+    <td><?php echo $product['prix']?>Dh</td>
+    <td><?php echo number_format($product['quantity'] * $product['prix'], 2)?>Dh</td>
     <td>
-      <a href="<?php echo URLROOT; ?>/contacts/remove/<?php echo $product['id']; ?>">remve</a>
+      <button class="btn-danger"><a style="text-decoration:none; color:black; " href="<?php echo URLROOT; ?>/contacts/remove/<?php echo $product['id']; ?>">Remove</a></button>
     </td>
     <td>
     </td>
@@ -84,7 +84,27 @@
 
   </tr>
 
-<?php endforeach ?>
+<?php
+$total =$total +($product['quantity'] * $product['prix']);
+
+endforeach ?>
+
+<tr>
+  <td colspan="3" align="right" > Total</td>
+  <td  align="right"> <?php echo number_format($total,2);?>DH</td>
+  <td></td>
+</tr>
+<tr>
+  <td colspan="5">
+  <div class="d-grid gap-2 col-6 mx-auto" style="display: flex ;justify-content: center;">
+  
+  <a href="#" type="button" class="btn btn-secondary">CHECKOUT</a>
+</div>
+  
+ 
+      
+  </td>
+</tr>
 </table>
 </div>
  <?php   } ?>

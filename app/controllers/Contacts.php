@@ -223,6 +223,7 @@
       foreach($_SESSION["shopping_cart"] as $k => $v) {
       if($id == $v['id']){
       unset($_SESSION["shopping_cart"][$k]);
+      flash('contact_message', 'Remove product cart');
       redirect('contacts/store');
     }
   }
@@ -286,6 +287,7 @@
 
       }
     }
+    flash('contact_message', 'Add to cart');
     redirect('contacts/store');
 echo "<pre>" ;
  var_dump($_SESSION);

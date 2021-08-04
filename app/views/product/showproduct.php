@@ -22,9 +22,7 @@
   <hr>
 
 
-  <form class="pull-right" action="<?php echo URLROOT; ?>/contacts/delete/<?php echo $data['product']->id_product; ?>" method="post">
-    <input type="submit" value="Delete" class="btn btn-danger">
-  </form>
+ 
   <form class="pull-right" action="<?php echo URLROOT; ?>/contacts/addtocart/<?php echo $data['product']->id_product; ?>" method="post">
   <input type="text" name="quantity" value="1"/>
   <input type="hidden" name="prod_name" value="<?php echo $data['product']->prod_name; ?>">
