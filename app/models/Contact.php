@@ -48,7 +48,20 @@
         return false;
       }
     }
+public function checkout($data){
+  $this->db->query('INSERT INTO checkout (name, prix, quantity, user_name) VALUES(:name, :prix, :quantity, :user_name)');
+  $this->db->bind(':name', $data['name']);
+  $this->db->bind(':prix', $data['prix']);
+  $this->db->bind(':quantity', $data['quantity']);
+  $this->db->bind(':user_name', $data['user_name']);
+  
+  if($this->db->execute()){
+    return true;
+  } else {
+    return false;
+  }
 
+}
     public function getContactById($id){
       $this->db->query('SELECT * FROM product WHERE id_product = :id_product');
       $this->db->bind(':id_product', $id);

@@ -98,7 +98,7 @@ endforeach ?>
   <td colspan="5">
   <div class="d-grid gap-2 col-6 mx-auto" style="display: flex ;justify-content: center;">
   
-  <a href="#" type="button" class="btn btn-secondary">CHECKOUT</a>
+  <a href="<?php echo URLROOT; ?>/contacts/checkout/" type="button" class="btn btn-secondary">CHECKOUT</a>
 </div>
   
  

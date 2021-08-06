@@ -231,6 +231,27 @@
 }
 
     }
+    public function checkout(){
+      foreach($_SESSION["shopping_cart"] as $key => $product){
+      $data=[
+
+      'name' => trim( $product['name']),
+      'prix' => trim( $product['prix']),
+      'quantity' => trim( $product['quantity']),
+      'user_name' => trim($_SESSION['user_name']),
+
+      ];
+      if($this->contactModel->checkout($data)){
+        flash('contact_message', 'thnx for order');
+        redirect('contacts/store');
+      } else {
+        die('Something went wrong');
+      
+    } }
+
+
+      var_dump($_SESSION);
+    }
   
   public function addtocart($product){
     $prodducy_ids=array();
