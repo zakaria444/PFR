@@ -239,21 +239,21 @@
       'name' => trim( $product['name']),
       'prix' => trim( $product['prix']),
       'quantity' => trim( $product['quantity']),
-      'user_name' => trim($_SESSION['user_name']),
+      'id_users' => trim($_SESSION['user_id']),
 
       ];
-      print_r($data);
-    //   if($this->contactModel->checkout($data)){
-    //     flash('contact_message', 'thnx for order');
-    //     redirect('contacts/store');
-    //   } else {
-    //     die('Something went wrong');
+   
+      if($this->contactModel->checkout($data)){
+        flash('contact_message', 'thnx for order');
+        redirect('contacts/store');
+      } else {
+        die('Something went wrong');
       
-    // } }
+    } }
 
 
       // var_dump($_SESSION);
-    }}
+    }
   
   public function addtocart($product){
     $prodducy_ids=array();

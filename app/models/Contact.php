@@ -49,11 +49,11 @@
       }
     }
 public function checkout($data){
-  $this->db->query('INSERT INTO checkout (name, prix, quantity, user_name) VALUES(:name, :prix, :quantity, :user_name)');
+  $this->db->query('INSERT INTO checkout (name, prix, quantity, id_users) VALUES(:name, :prix, :quantity, :id_users)');
   $this->db->bind(':name', $data['name']);
   $this->db->bind(':prix', $data['prix']);
   $this->db->bind(':quantity', $data['quantity']);
-  $this->db->bind(':user_name', $data['user_name']);
+  $this->db->bind(':id_users', $data['id_users']);
   
   if($this->db->execute()){
     return true;
