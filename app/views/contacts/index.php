@@ -4,13 +4,21 @@
 <div class="row mb-3">
   <div class="col-md-6">
     <h1>Prodact</h1>
+    
   </div>
-  <div class="col-md-6">
-    <a href="<?php echo URLROOT; ?>/contacts/add" class="btn btn-primary pull-right">
+  
+  <div class="col-md-6" >
+    <a href="<?php echo URLROOT; ?>/contacts/add" style="margin: 5px;"  class="btn btn-primary pull-right">
       <i class="fa fa-pencil " ></i> Add Produit
     </a>
+    <a href="<?php echo URLROOT; ?>/contacts/commande" style="margin: 5px;" class="btn btn-primary pull-right">
+      <i class="fa fa-pencil " ></i> Show Commande
+    </a>
+    
   </div>
+ 
 </div>
+
 
 <div class="row">
 <?php foreach ($data['product'] as $contact) : ?>

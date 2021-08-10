@@ -254,7 +254,38 @@
 
       // var_dump($_SESSION);
     }
+    public function commande(){
+      
+
+      $contacts = $this->contactModel->getCommande();
   
+        $data = [
+          'product' => $contacts
+        ];
+  
+        $this->view('contacts/commande', $data);
+
+    }
+  public function deletcom($id){
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+      // Get existing post from model
+      
+      // Check for owner
+      
+
+      if($this->contactModel->deletecom($id)){
+        flash('contact_message', 'Commande Removed');
+        redirect('contacts/commande');
+      } else {
+        die('Something went wrong');
+      }
+    } else {
+      die("something is off");
+      redirect('contacts/commande');
+    }
+    
+    
+  }
   public function addtocart($product){
     $prodducy_ids=array();
     //chek if add to cart button has been submit 

@@ -13,6 +13,13 @@
 
       return $results;
     }
+    public function getCommande(){
+      $this->db->query('SELECT * FROM checkout INNER JOIN users ON users.id_users = checkout.id_users ');
+
+      $results = $this->db->resultSet();
+
+      return $results;
+    }
 
     public function addContact($data){
       $this->db->query('INSERT INTO product (prod_name, prod_details, prod_prix, prod_title, img) VALUES(:prod_name, :prod_details, :prod_prix, :prod_title, :img)');
@@ -70,7 +77,20 @@ public function checkout($data){
 
       return $row;
     }
+    public function deletecom($id){
+      $this->db->query('DELETE FROM checkout WHERE id = :id');
+      // Bind values
+      $this->db->bind(':id', $id);
 
+      // Execute
+      if($this->db->execute()){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+   
     public function deleteContact($id){
       $this->db->query('DELETE FROM product WHERE id_product = :id');
       // Bind values

@@ -8,12 +8,12 @@
 
     // Regsiter user
     public function register($data){
-      $this->db->query('INSERT INTO users ( EMAIL,	PASSWORD,num,ADRESS,name  ,ROLE_ID ) VALUES(:email, :password ,:num,:ADRESS,:name, :ROLE_ID)');
+      $this->db->query('INSERT INTO users ( EMAIL,	PASSWORD,num,ADRESS,name_user  ,ROLE_ID ) VALUES(:email, :password ,:num,:ADRESS,:name_user, :ROLE_ID)');
       // Bind values
       
       $this->db->bind(':email', $data['email']);
       $this->db->bind(':password', $data['password']);
-      $this->db->bind(':name', $data['name']);
+      $this->db->bind(':name_user', $data['name_user']);
       $this->db->bind(':ADRESS', $data['ADRESS']);
       $this->db->bind(':num', $data['num']);
 
