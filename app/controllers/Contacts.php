@@ -233,6 +233,7 @@
     }
     public function checkout(){
       foreach($_SESSION["shopping_cart"] as $key => $product){
+        
       $data=[
 
       'name' => trim( $product['name']),
@@ -241,17 +242,18 @@
       'user_name' => trim($_SESSION['user_name']),
 
       ];
-      if($this->contactModel->checkout($data)){
-        flash('contact_message', 'thnx for order');
-        redirect('contacts/store');
-      } else {
-        die('Something went wrong');
+      print_r($data);
+    //   if($this->contactModel->checkout($data)){
+    //     flash('contact_message', 'thnx for order');
+    //     redirect('contacts/store');
+    //   } else {
+    //     die('Something went wrong');
       
-    } }
+    // } }
 
 
-      var_dump($_SESSION);
-    }
+      // var_dump($_SESSION);
+    }}
   
   public function addtocart($product){
     $prodducy_ids=array();
