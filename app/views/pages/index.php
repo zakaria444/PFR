@@ -39,7 +39,7 @@
       <a href="<?php echo URLROOT; ?>/contacts/show/" class="btn btn-dark">GO store</a>
     </div>
     </div>
-    <div class=" w-40 col-4 " >
+    <div  class=" w-40 col-4 " >
     <div class="card card-body mb-3">
       <div class="cont" style="display:flex; ">
     <div class="title"  style="    background-color:#DDDDDD;">

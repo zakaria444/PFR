@@ -266,6 +266,43 @@
         $this->view('contacts/commande', $data);
 
     }
+    public function contactme(){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Sanitize POST array
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      
+      $data = [
+        'sujet'=>trim($_POST['sujet']),
+        'message'=>trim($_POST['message']),
+        'id_users' => trim($_SESSION['user_id']),
+        'sujet_err' => '',
+        'message_err' => '',
+      ];
+      if(empty($data['sujet'])){
+        $data['sujet_err'] = 'Please enter sujet';
+      }
+      if(empty($data['message'])){
+        $data['message_err'] = 'Please enter message text';
+      }
+
+      if(empty($data['sujet_err']) && empty($data['message_err'])){
+        if($this->contactModel->ContactMe($data)){
+          flash('contact_message', 'Mesage Added');
+          redirect('product/contact');
+        } else {
+          die('Something went wrong');
+        }
+      } else {
+        // Load view with errors
+        $this->view('product/contact', $data);
+      }
+
+      }
+      
+
+      $this->view('product/contact');
+
+    }
   public function deletcom($id){
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
       // Get existing post from model

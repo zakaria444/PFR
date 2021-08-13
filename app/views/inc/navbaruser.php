@@ -10,6 +10,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/contacts/store">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo URLROOT; ?>/contacts/contactme">Contact MBM</a>
+          </li>
           
         </ul>
         

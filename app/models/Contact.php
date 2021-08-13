@@ -20,6 +20,20 @@
 
       return $results;
     }
+    public function ContactMe($data){
+      $this->db->query('INSERT INTO contact (sujet, message,id_user)VALUES(:sujet,:message,:id_users)');
+      $this->db->bind(':sujet', $data['sujet']);
+      $this->db->bind(':message', $data['message']);
+      $this->db->bind(':id_users', $data['id_users']);
+      // Execute
+      if($this->db->execute()){
+        return true;
+      } else {
+        return false;
+      }
+
+
+    }
 
     public function addContact($data){
       $this->db->query('INSERT INTO product (prod_name, prod_details, prod_prix, prod_title, img) VALUES(:prod_name, :prod_details, :prod_prix, :prod_title, :img)');
